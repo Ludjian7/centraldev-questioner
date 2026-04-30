@@ -1,0 +1,2 @@
+ALTER TABLE public.submissions DROP CONSTRAINT IF EXISTS submissions_tier_check;
+ALTER TABLE public.submissions ADD CONSTRAINT submissions_tier_check CHECK (tier = ANY (ARRAY['STARTER'::text, 'PROFESSIONAL'::text, 'BUSINESS'::text, 'ENTERPRISE'::text, 'BASIC'::text, 'STANDARD'::text, 'ADVANCED'::text]));
